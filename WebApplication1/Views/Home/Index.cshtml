@@ -13,5 +13,11 @@
 <body>
     <span style="font-size: 18pt;">Hello, <b>MVC</b> world!</span>
     The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
+    <br />
+    @{
+        var helloWorld = "<b>Hello, world!</b>";
+    }
+    <p>@helloWorld</p>
+    <p>@Html.Raw(helloWorld)</p>
 </body>
 </html>
