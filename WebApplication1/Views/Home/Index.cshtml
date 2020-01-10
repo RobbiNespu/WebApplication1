@@ -47,5 +47,26 @@
         <text>zzThis is plain text as well, and we can
             even span multiple lines, if needed!</text>
     }
+
+
+    @*
+        Here's a Razor server-side comment
+        It won't be rendered to the browser
+        It can span multiple lines
+    *@
+
+
+    @{
+        @*
+            Here's a Razor server-side comment 
+        *@
+        // C# style single-line comment 
+        //(If you're inside a Razor code block, you can even use the regular C# style comments)
+
+        /*
+        C# style multiline comment
+        It can span multiple lines
+        */
+    }
 </body>
 </html>
