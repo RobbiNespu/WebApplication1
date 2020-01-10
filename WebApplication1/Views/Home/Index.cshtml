@@ -14,6 +14,8 @@
     <span style="font-size: 18pt;">Hello, <b>MVC</b> world!</span>
     The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
     <br />
+
+    @*HTML Encoding*@
     @{
         var helloWorld = "<b>Hello, world!</b>";
     }
@@ -21,9 +23,29 @@
     <p>@Html.Raw(helloWorld)</p>
     <br />
 
+    @*Explicit expressions*@
     @{
         var name = "John Doe";
     }
     Hello, @(name.Substring(0, 4)). Your age is: <b>@(37 + 5).</b>
+
+    @*Multi-statement Razor blocks*@
+    @{
+        var sum = 32 + 10;
+        var greeting = "Hello, world!";
+        var text = "";
+        for (int i = 0; i < 3; i++)
+        {
+            text += greeting + " The result is: " + sum + "\n";
+        }
+    }
+
+    @* HTML tags and plain text inside code blocks *@
+    @{
+        @:This is plain text!
+        <br><br>
+        <text>zzThis is plain text as well, and we can
+            even span multiple lines, if needed!</text>
+    }
 </body>
 </html>
