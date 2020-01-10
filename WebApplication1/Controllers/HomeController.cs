@@ -10,8 +10,15 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            //return View();
             //return Content("Hello, MVC world!");
+            
+            Models.Movie movie = new Models.Movie()
+            {
+                Title = "The Godfather",
+                ReleaseDate = new DateTime(1972, 3, 24)
+            };
+            return View(movie);
         }
     }
 }
