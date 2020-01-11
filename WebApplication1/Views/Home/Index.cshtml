@@ -58,9 +58,9 @@
 
     @{
         @*
-            Here's a Razor server-side comment 
+            Here's a Razor server-side comment
         *@
-        // C# style single-line comment 
+        // C# style single-line comment
         //(If you're inside a Razor code block, you can even use the regular C# style comments)
 
         /*
@@ -68,5 +68,27 @@
         It can span multiple lines
         */
     }
+    <br />
+    @{
+        string helloWorldMsg = "Hello, world!";
+    }
+
+    <div>
+        @helloWorldMsg
+    </div>
+
+    @{
+        string helloWorldMsg1 = "Good day";
+        if (DateTime.Now.Hour > 17)
+        {
+            helloWorldMsg1 = "Good evening";
+        }
+        helloWorldMsg1 += ", world!";
+        helloWorldMsg1 = helloWorldMsg1.ToUpper();
+    }
+
+    <div>
+        @helloWorldMsg1
+    </div>
 </body>
 </html>
