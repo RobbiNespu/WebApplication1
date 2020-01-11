@@ -90,5 +90,14 @@
     <div>
         @helloWorldMsg1
     </div>
+
+    @if (DateTime.Now.Year >= 2042 || DateTime.Now.Year == 2020)
+    {
+        <span>The flying car has finally arrived!</span>
+    }
+    else
+    {
+        <span>We're still waiting for the year of 2042...</span>
+    }
 </body>
 </html>
