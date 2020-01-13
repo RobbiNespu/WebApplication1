@@ -127,14 +127,14 @@
         }
     </ul>
     @*While loop*@
-<ul>
-    @{
-        int counter = 0;
-    }
-    @while (counter < names.Count)
-    {
-        <li>@names[counter++]</li>
-    }
+    <ul>
+        @{
+            int counter = 0;
+        }
+        @while (counter < names.Count)
+        {
+            <li>@names[counter++]</li>
+        }
     </ul>
     @*do...while" loop*@
     <ul>
@@ -161,5 +161,19 @@
             }
         }
     </ul>
+
+    @{
+        Func<dynamic, object> movieTemplate = @<div>@item.Title [@item.ReleaseDate.ToShortDateString()]</div>; //The Godfather [24/3/1972]
+
+List<Movie> movies = new List<Movie>();
+movies.Add(new Movie() { Title = "The Godfather", ReleaseDate = new DateTime(1972, 3, 24) });
+movies.Add(new Movie() { Title = "Forrest Gump", ReleaseDate = new DateTime(1994, 7, 6) });
+movies.Add(new Movie() { Title = "Fight Club", ReleaseDate = new DateTime(1999, 10, 15) });
+    }
+
+    @foreach (var movie in movies)
+    {
+        @movieTemplate(movie)
+    }
 </body>
 </html>
