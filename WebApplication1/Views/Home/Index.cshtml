@@ -99,5 +99,67 @@
     {
         <span>We're still waiting for the year of 2042...</span>
     }
+
+
+    @{
+        List<string> names = new List<string>()
+{
+                "John Doe",
+                "Jane Doe",
+                "Joe Doe",
+                "Jenna Doe",
+                "Doggy Doe"
+            };
+    }
+
+    @*For loop*@
+    <ul>
+        @for (int i = 0; i < names.Count; i++)
+        {
+            <li>@names[i]</li>
+        }
+    </ul>
+    @*For each loop*@
+    <ul>
+        @foreach (string namex in names)
+        {
+            <li>@namex</li>
+        }
+    </ul>
+    @*While loop*@
+<ul>
+    @{
+        int counter = 0;
+    }
+    @while (counter < names.Count)
+    {
+        <li>@names[counter++]</li>
+    }
+    </ul>
+    @*do...while" loop*@
+    <ul>
+        @{
+            counter = 0;
+        }
+        @do
+        {
+            <li>@names[counter++]</li>
+        } while (counter < names.Count);
+    </ul>
+
+    @*break/continue*@
+    <ul>
+        @for (int i = 0; i < names.Count; i++)
+        {
+            <li>@names[i]</li>
+
+            @if (i >= 2)
+            {
+                <li>...and so on</li>
+
+                break;
+            }
+        }
+    </ul>
 </body>
 </html>
